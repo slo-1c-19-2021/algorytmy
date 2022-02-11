@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>Algorytm Euklidesa</title>
+	
+	<meta name="description" content="Największy wspólny dzielnik dwóch liczb." />
+	<meta name="keywords" content="Euklides, NWD, algrytm" />
+
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+<script>
+	function f1()
+	{
+		var a = document.getElementById("a").value;
+		var b = document.getElementById("b").value;
+		var t;
+		
+		while(a != b)
+		{
+			if(a < b) b = b - a;
+			else a = a - b;
+		}
+		
+		t = a
+		
+		document.getElementById("wynik").innerHTML = t;	
+	}
+
+</script>
+	
+</head>
+
+<body>
+<center><h1>NWD - algorytm Euklidesa</h1></center>
+<p id="tekst"><strong>Algorytm Euklidesa</strong> służy do wyznaczania największego wspólnego dzielnika dwóch liczb całkowitych. Największy wspólny dzielnik dwóch liczb a i  b, to taka liczba, która dzieli te liczby bez reszty i jest ona możliwie największa. Można go zastosować do skracania ułamków lub wyznaczenia najmniejszej wspólnej wielokrotności NWW.</br>Sposób rozwiązania jest następujący.Wybieramy większą z dwóch liczb i zamieniamy ją na różnicę większej i mniejszej. Czynność tą powtarzamy do momentu uzyskania dwóch takich samych wartości.</p>
+<h3>Strona zawiera:</h3>
+<ul>
+	<li>Schemat blokowy</li>
+	<li>Kod cpp</li>
+	<li>Kod python</li>
+	<li>Skrypt JS</li>
+	<li>Działający skrypt JS</li>
+</ul>
+<center>
+<h2>Schemat blokowy</h2>
+<img src = "alg1.jpg">
+</center>
+<br>
+<h2>Kod cpp</h2>
+
+<pre style="width:100%;padding:0px" id="codeblock"><code style="width:100%"><span style="color: limegreen; font-weight: bold">#include &lt;iostream&gt;</span>
+<span style="color: darkblue; font-weight: bold">using namespace</span> <span style="color: limegreen; font-weight: bold">std</span><span style="color: red; font-weight: bold">;</span>
+
+<span style="color: darkblue; font-weight: bold">int</span> main<span style="color: red; font-weight: bold">()</span>
+&lcub;
+    <span style="color: darkblue; font-weight: bold">int</span> a,b<span style="color: red; font-weight: bold">;</span>
+    <span style="color: limegreen; font-weight: bold">cin</span> <span style="color: red; font-weight: bold">&gt;&gt;</span> a <span style="color: red; font-weight: bold">&gt;&gt;</span> b<span style="color: red; font-weight: bold">;</span>
+
+    <span style="color: darkblue; font-weight: bold">while</span><span style="color: red; font-weight: bold">(</span>a <span style="color: red; font-weight: bold">!=</span> b<span style="color: red; font-weight: bold">)</span>
+        <span style="color: darkblue; font-weight: bold">if</span><span style="color: red; font-weight: bold">(</span>a <span style="color: red; font-weight: bold">&gt;</span> b<span style="color: red; font-weight: bold">)</span> a <span style="color: red; font-weight: bold">-=</span> b<span style="color: red; font-weight: bold">;</span>
+        <span style="color: darkblue; font-weight: bold">else</span>      b <span style="color: red; font-weight: bold">-=</span> a<span style="color: red; font-weight: bold">;</span>
+
+    <span style="color: limegreen; font-weight: bold">cout</span> <span style="color: red; font-weight: bold">&lt;&lt;</span> a <span style="color: red; font-weight: bold">&lt;&lt;</span> <span style="color: limegreen; font-weight: bold">endl</span><span style="color: red; font-weight: bold">;</span>
+
+    <span style="color: darkblue; font-weight: bold">return</span> <span style="color: magenta; font-weight: bold">0</span><span style="color: red; font-weight: bold">;</span>
+&rcub;
+</code></pre>
+<br>
+<h2>Kod python</h2>
+<pre style="width:100%;padding:0px" id="codeblock"><code style="width:100%"><span style="color: darkorange; font-weight: bold">def</span> <span style="color: darkblue; font-weight: bold">NWD</span>(a,b):
+    <span style="color: darkorange; font-weight: bold">while</span> a != b:
+        <span style="color: darkorange; font-weight: bold">if</span> a&gt;b: a -= b
+        <span style="color: darkorange; font-weight: bold">else</span>: b -= a
+    <span style="color: darkorange; font-weight: bold">return</span> a
+ 
+a = <span style="color: mediumorchid; font-weight: bold">int</span>(<span style="color: mediumorchid; font-weight: bold">input</span>())
+b = <span style="color: mediumorchid; font-weight: bold">int</span>(<span style="color: mediumorchid; font-weight: bold">input</span>())
+ 
+<span style="color: mediumorchid; font-weight: bold">print</span>(NWD(a,b))</code></pre>
+<br>
+<h2>Skrypt JS</h2>
+<pre style="width:100%;padding:0px" id="codeblock"><code style="width:100%"><span style="color: royalblue; font-weight: bold">&lt;script&gt;</span>
+	<span style="color: darkblue; font-weight: bold">function</span> f1()
+	&lcub;
+		<span style="color: darkblue; font-weight: bold">var</span> a = document.getElementById(<span style="color: royalblue; font-weight: bold">"a"</span>).value;
+		<span style="color: darkblue; font-weight: bold">var</span> b = document.getElementById(<span style="color: royalblue; font-weight: bold">"b"</span>).value;
+		<span style="color: darkblue; font-weight: bold">var</span> t;
+		
+		<span style="color: darkblue; font-weight: bold">while</span>(a != b)
+		&lcub;
+			<span style="color: darkblue; font-weight: bold">if</span>(a &lt; b) b = b - a;
+			<span style="color: darkblue; font-weight: bold">else</span> a = a - b;
+		&rcub;
+		
+		t = a
+		
+		document.getElementById(<span style="color: royalblue; font-weight: bold">"wynik"</span>).innerHTML = t;	
+	&rcub;
+
+<span style="color: royalblue; font-weight: bold">&lt;/script&gt;</span></code></pre>
+<br>
+<center>
+<h2>Skrypt JS</h2>
+<p><strong>Skrypt JS oblicza największy wspólny dzielnik liczb "a" i "b"</strong></p><br>
+<strong>a =</strong>
+<input type = "number" id = "a" value = 1>
+<strong>b =</strong>
+<input type = "number" id = "b" value = 100>
+<br><br>
+<input type = "button" value = "Oblicz" onclick = "f1()">
+<br><br>
+<div id = "wynik">...</div>
+</center>
+
+
+
+
+</body>
+</html>
